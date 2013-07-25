@@ -59,6 +59,25 @@
 #define LOG_NDDEBUG 0
 #include <utils/Log.h>
 
+#ifndef SPAM_THE_SHIT_OUT_LOGCAT
+#undef ALOGE
+#undef ALOGW
+#undef ALOGI
+#undef ALOGV
+#define ALOGE(...) {}
+#define ALOGW(...) {}
+#define ALOGI(...) {}
+#define ALOGV(...) {}
+#undef LOGE
+#undef LOGW
+#undef LOGI
+#undef LOGV
+#define LOGE(...) {}
+#define LOGW(...) {}
+#define LOGI(...) {}
+#define LOGV(...) {}
+#endif
+
 /* Uncomment to force ALOGD messages */
 // #define ALOGD ALOGI
 

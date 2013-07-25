@@ -75,6 +75,17 @@ extern char* get_timestamp(char* str, unsigned long buf_size);
 
 #include <utils/Log.h>
 
+#ifndef SPAM_THE_SHIT_OUT_LOGCAT
+#undef ALOGE
+#undef ALOGW
+#undef ALOGI
+#undef ALOGV
+#define ALOGE if (0){}
+#define ALOGW if (0){}
+#define ALOGI if (0){}
+#define ALOGV if (0){}
+#endif
+
 #ifndef DEBUG_DMN_LOC_API
 
 /* LOGGING MACROS */

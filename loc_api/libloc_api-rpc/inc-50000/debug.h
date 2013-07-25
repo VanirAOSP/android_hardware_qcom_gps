@@ -34,6 +34,25 @@
 #define LOG_TAG "libgps-rpc"
 #include <utils/Log.h>
 
+#ifndef SPAM_THE_SHIT_OUT_LOGCAT
+#undef ALOGE
+#undef ALOGW
+#undef ALOGI
+#undef ALOGV
+#define ALOGE(...) {}
+#define ALOGW(...) {}
+#define ALOGI(...) {}
+#define ALOGV(...) {}
+#undef LOGE
+#undef LOGW
+#undef LOGI
+#undef LOGV
+#define LOGE(...) {}
+#define LOGW(...) {}
+#define LOGI(...) {}
+#define LOGV(...) {}
+#endif
+
 #define PRINT(x...) do {                                    \
         fprintf(stdout, "%s(%d) ", __FUNCTION__, __LINE__); \
         fprintf(stdout, ##x);                               \
