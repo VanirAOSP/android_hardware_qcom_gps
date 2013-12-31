@@ -8,7 +8,7 @@ LOCAL_C_INCLUDES:=$(LOCAL_PATH)
 
 LOCAL_CFLAGS:= -fno-short-enums 
 
-LOCAL_CFLAGS+=-DRPC_OFFSET=0
+LOCAL_CFLAGS+=-DRPC_OFFSET=0 -Wno-error=strict-aliasing -fno-strict-aliasing
 #LOCAL_CFLAGS+=-DDEBUG -DVERBOSE
 
 LOCAL_COPY_HEADERS_TO:= librpc/rpc
